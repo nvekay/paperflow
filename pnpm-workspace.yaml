@@ -1,0 +1,7 @@
+packages:
+  - apps/*
+  - packages/*
+
+allowBuilds:
+  # esbuild (used by vite and tsx) checks its platform binary on install
+  esbuild: true
