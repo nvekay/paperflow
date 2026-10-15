@@ -5,3 +5,9 @@ packages:
 allowBuilds:
   # esbuild (used by vite and tsx) checks its platform binary on install
   esbuild: true
+  # Native modules pulled in by @n8n/node-cli's dependencies; building and linting nodes does not use them
+  cpu-features: false
+  eslint-plugin-n8n-nodes-base: false
+  isolated-vm: false
+  ssh2: false
+  unrs-resolver: false

@@ -8,7 +8,7 @@ const schema = z.object({
   /** n8n calls the app's API with this bearer token */
   PAPERFLOW_API_KEY: z.string().min(16),
   /** The intake workflow's production webhook and the header secret it checks */
-  N8N_WEBHOOK_URL: z.string().url(),
+  N8N_INTAKE_URL: z.string().url(),
   N8N_WEBHOOK_SECRET: z.string().min(16),
   /** Signs review links */
   REVIEW_SECRET: z.string().min(16),

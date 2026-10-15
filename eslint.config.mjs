@@ -12,6 +12,8 @@ export default tseslint.config(
       '**/next-env.d.ts',
       'playwright-report/**',
       'test-results/**',
+      // Linted by n8n's own rules (n8n-node lint)
+      'packages/n8n-nodes-paperflow/**',
     ],
   },
   js.configs.recommended,

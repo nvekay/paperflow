@@ -8,7 +8,7 @@ export async function startIntake(documentId: string) {
   const e = env();
   let res: Response;
   try {
-    res = await fetch(e.N8N_WEBHOOK_URL, {
+    res = await fetch(e.N8N_INTAKE_URL, {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-paperflow-secret': e.N8N_WEBHOOK_SECRET },
       body: JSON.stringify({ documentId }),

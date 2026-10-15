@@ -1,0 +1,754 @@
+{
+  "id": "pfIntake00000001",
+  "name": "Paperflow: invoice intake",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Intake\nThe app stores the upload and calls this webhook. The Paperflow node has Claude read the invoice, code checks the numbers and decides whether a person must look at it. Every step is reported back to the demo page.",
+        "height": 520,
+        "width": 900,
+        "color": 7
+      },
+      "id": "8cfacd8d-40ee-4915-a606-754544d6b386",
+      "name": "Note: intake",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "content": "### Thresholds\nChange **Settings** to approve larger invoices automatically or to demand less certainty. Nothing is ever rejected without a person.",
+        "height": 200,
+        "width": 420,
+        "color": 5
+      },
+      "id": "0cfe64ca-a52b-43b9-a529-00e3605c4ce1",
+      "name": "Note: thresholds",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        280
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Human in the loop\nThe workflow posts a review link to Slack and pauses. The reviewer approves (fixing fields if needed) or rejects on the review page, which resumes this execution through its resume URL.",
+        "height": 460,
+        "width": 1060,
+        "color": 6
+      },
+      "id": "b9c4404a-0603-4813-a057-235125994d75",
+      "name": "Note: review",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        880,
+        140
+      ]
+    },
+    {
+      "parameters": {
+        "content": "## Record\nApproved invoices become rows in Google Sheets: automatically for clean ones, after a review for the rest.",
+        "height": 420,
+        "width": 520,
+        "color": 4
+      },
+      "id": "f2600dda-41b2-4178-ab33-2108d890ef96",
+      "name": "Note: record",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        1960,
+        -260
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "paperflow-intake",
+        "authentication": "headerAuth",
+        "options": {}
+      },
+      "id": "6183d467-fb02-4399-add0-1039e313bf9b",
+      "name": "Invoice received",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "6fbe5885-ed99-44fb-a4bf-7fc5eb227169",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "pfWebhookSecret1",
+          "name": "Paperflow webhook secret"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "c51e48be-b30c-4b31-a573-412ad8337106",
+              "name": "documentId",
+              "value": "={{ $json.body.documentId }}",
+              "type": "string"
+            },
+            {
+              "id": "e194df8a-3e7a-4dfe-a804-302237acbca9",
+              "name": "autoApproveMaxUsd",
+              "value": 5000,
+              "type": "number"
+            },
+            {
+              "id": "dbf295d9-7c1f-48ae-a882-428eec2098f8",
+              "name": "minConfidence",
+              "value": "high",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "eef0dca3-0a12-4259-a32f-107058daa3e7",
+      "name": "Settings",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "workflow_started",
+        "status": "done",
+        "message": "Intake workflow started"
+      },
+      "id": "32e537c7-f369-423a-a12b-f6347371e6ac",
+      "name": "Report: started",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        440,
+        0
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "extract",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "options": {
+          "autoApproveMaxUsd": "={{ $('Settings').item.json.autoApproveMaxUsd }}",
+          "minConfidence": "={{ $('Settings').item.json.minConfidence }}"
+        }
+      },
+      "id": "b715b567-2fa9-4937-a192-70b52f7621c8",
+      "name": "Read and check invoice",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        660,
+        0
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "80722aeb-da9f-4496-af79-c3fe77eca645",
+              "leftValue": "={{ $json.route }}",
+              "rightValue": "auto_approve",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": false,
+        "options": {}
+      },
+      "id": "782aaf9f-d636-4221-ae0e-2c27f22cc17e",
+      "name": "Clean?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        940,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "review_requested",
+        "status": "waiting",
+        "message": "Waiting for a reviewer",
+        "data": "={{ { resumeUrl: $execution.resumeUrl } }}"
+      },
+      "id": "efe562f3-ae0a-4ca7-ae6c-9b1f2e49211d",
+      "name": "Report: waiting for review",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        300
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.SLACK_CHANNEL_ID }}"
+        },
+        "messageType": "block",
+        "blocksUi": "={{ (() => {\n  const r = $('Read and check invoice').item.json;\n  const i = r.invoice;\n  const total = i.total === null ? 'no total' : i.total.toLocaleString('en-US', { minimumFractionDigits: 2 }) + ' ' + (i.currency || '');\n  return JSON.stringify({\n    blocks: [\n      { type: 'section', text: { type: 'mrkdwn', text: '*Invoice needs a review*\\n' + (i.vendor.name || 'Unknown vendor') + ' · ' + (i.invoiceNumber || 'no number') + ' · *' + total + '*' } },\n      { type: 'section', text: { type: 'mrkdwn', text: r.reasons.map((reason) => '• ' + reason).join('\\n') } },\n      { type: 'actions', elements: [{ type: 'button', style: 'primary', text: { type: 'plain_text', text: 'Review invoice' }, url: r.reviewUrl }] },\n    ],\n  });\n})() }}",
+        "text": "=Invoice needs a review: {{ $('Read and check invoice').item.json.invoice.vendor.name }}",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "id": "f1da5909-6b1f-4d10-a02f-26e805ff6960",
+      "name": "Ask reviewer in Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        1220,
+        300
+      ],
+      "credentials": {
+        "slackApi": {
+          "id": "pfSlackBot000001",
+          "name": "Slack bot"
+        }
+      },
+      "webhookId": "caa58bd6-f6b7-49c2-a416-71b5b6b8c91b",
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "slack_sent",
+        "status": "info",
+        "message": "Posted the review link to Slack"
+      },
+      "id": "f1a3ea0e-ddce-4b0e-a254-4e34f1a5b7ba",
+      "name": "Report: posted to Slack",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        300
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "slack_failed",
+        "status": "failed",
+        "message": "={{ 'Could not post to Slack (' + String($json.error?.message ?? $json.error ?? 'unknown error') + '); the review link still works' }}"
+      },
+      "id": "5302da12-4f74-4f91-a9e5-3ecba8be45f0",
+      "name": "Report: Slack failed",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        1440,
+        480
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resume": "webhook",
+        "httpMethod": "POST",
+        "limitWaitTime": true,
+        "resumeAmount": 7,
+        "resumeUnit": "days",
+        "options": {}
+      },
+      "id": "48ae7fea-982a-476b-a8e5-0defa5fcff15",
+      "name": "Wait for decision",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1660,
+        300
+      ],
+      "webhookId": "f1e600e3-0791-4ec4-a792-33541030a479"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "e5a4b777-e743-4efa-a503-34b4f8080551",
+                    "leftValue": "={{ $json.body.decision }}",
+                    "rightValue": "approve",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Approved"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ac9598b3-3032-443c-aea2-c1212a186120",
+                    "leftValue": "={{ $json.body.decision }}",
+                    "rightValue": "reject",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Rejected"
+            }
+          ]
+        },
+        "looseTypeValidation": false,
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "No answer"
+        }
+      },
+      "id": "1b1060ea-d80d-4557-a8b8-e397a9dcd81e",
+      "name": "Decision",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        1880,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ $json.body ? $json.body.row : $json.row }}",
+        "options": {}
+      },
+      "id": "29659d21-e580-462b-a4ed-431063fe06c5",
+      "name": "Sheet row",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        2040,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "serviceAccount",
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.GOOGLE_SHEET_ID }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "id",
+          "value": "gid=0"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      },
+      "id": "a4ec8349-ebff-4234-a561-dee897b28aaf",
+      "name": "Append to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        2260,
+        -100
+      ],
+      "credentials": {
+        "googleApi": {
+          "id": "pfGoogleSheets01",
+          "name": "Google service account"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "recorded",
+        "status": "done",
+        "message": "Added a row to Google Sheets"
+      },
+      "id": "843ee693-d4b6-43da-aa12-17b0f2a2452c",
+      "name": "Report: recorded",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        2480,
+        -100
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "rejected",
+        "status": "done",
+        "message": "Marked as rejected; nothing was recorded"
+      },
+      "id": "95e8296b-03a0-484b-ada1-0d12cbe42d9a",
+      "name": "Report: rejected",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        300
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "failed",
+        "status": "failed",
+        "message": "No decision within 7 days"
+      },
+      "id": "4323024b-7c3a-458c-a944-6fd07b9b3be3",
+      "name": "Report: no answer",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        2100,
+        480
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "reportStep",
+        "documentId": "={{ $('Settings').item.json.documentId }}",
+        "step": "failed",
+        "status": "failed",
+        "message": "={{ 'Stopped at \"' + $prevNode.name + '\": ' + String($json.error?.message ?? $json.error ?? 'unknown error') }}"
+      },
+      "id": "416f9680-d013-42dc-aa32-ca9acb6e883a",
+      "name": "Report: failed",
+      "type": "CUSTOM.paperflow",
+      "typeVersion": 1,
+      "position": [
+        1220,
+        640
+      ],
+      "credentials": {
+        "paperflowApi": {
+          "id": "pfPaperflowApi01",
+          "name": "Paperflow API"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Invoice received": {
+      "main": [
+        [
+          {
+            "node": "Settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Settings": {
+      "main": [
+        [
+          {
+            "node": "Report: started",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report: started": {
+      "main": [
+        [
+          {
+            "node": "Read and check invoice",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read and check invoice": {
+      "main": [
+        [
+          {
+            "node": "Clean?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report: failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Clean?": {
+      "main": [
+        [
+          {
+            "node": "Sheet row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report: waiting for review",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report: waiting for review": {
+      "main": [
+        [
+          {
+            "node": "Ask reviewer in Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask reviewer in Slack": {
+      "main": [
+        [
+          {
+            "node": "Report: posted to Slack",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report: Slack failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report: Slack failed": {
+      "main": [
+        [
+          {
+            "node": "Wait for decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Report: posted to Slack": {
+      "main": [
+        [
+          {
+            "node": "Wait for decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for decision": {
+      "main": [
+        [
+          {
+            "node": "Decision",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Decision": {
+      "main": [
+        [
+          {
+            "node": "Sheet row",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report: rejected",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report: no answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Sheet row": {
+      "main": [
+        [
+          {
+            "node": "Append to Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append to Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Report: recorded",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Report: failed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "pfErrors00000001",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "pinData": {},
+  "tags": []
+}

@@ -10,3 +10,5 @@ coverage/
 playwright-report/
 test-results/
 .claude/
+# Built node copied in by pnpm n8n:prepare
+n8n/nodes/

@@ -1,0 +1,54 @@
+{
+  "name": "n8n-nodes-paperflow",
+  "version": "0.1.0",
+  "description": "n8n node for Paperflow: Claude reads an invoice, code checks it, the workflow decides who approves it",
+  "license": "MIT",
+  "homepage": "https://github.com/nvekay/paperflow/tree/main/packages/n8n-nodes-paperflow",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "invoice",
+    "claude",
+    "document-extraction"
+  ],
+  "author": {
+    "name": "nvekay",
+    "email": "108226876+nvekay@users.noreply.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nvekay/paperflow.git",
+    "directory": "packages/n8n-nodes-paperflow"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "dev": "n8n-node dev --external-n8n",
+    "lint": "n8n-node lint",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "release": "n8n-node release",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/PaperflowApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Paperflow/Paperflow.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.52.1",
+    "eslint": "9.32.0",
+    "n8n-workflow": "2.16.0",
+    "release-it": "^21.1.0",
+    "typescript": "5.9.2"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

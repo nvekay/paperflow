@@ -1,0 +1,66 @@
+{
+  "id": "pfErrors00000001",
+  "name": "Paperflow: errors to Slack",
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "472231a8-22ef-4ae4-ac79-1320655439b6",
+      "name": "Workflow failed",
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "select": "channel",
+        "channelId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $env.SLACK_CHANNEL_ID }}"
+        },
+        "text": "=:rotating_light: *{{ $json.workflow.name }}* failed at *{{ $json.execution.lastNodeExecuted }}*: {{ $json.execution.error.message }}\n<{{ $json.execution.url }}|Open the execution>",
+        "otherOptions": {
+          "includeLinkToWorkflow": false
+        }
+      },
+      "id": "db3eecb4-8959-4e68-a2de-c57ef2d465f2",
+      "name": "Alert in Slack",
+      "type": "n8n-nodes-base.slack",
+      "typeVersion": 2.3,
+      "position": [
+        240,
+        0
+      ],
+      "webhookId": "1f58f10e-b314-4371-a6fa-cce09ce3bfd9",
+      "credentials": {
+        "slackApi": {
+          "id": "pfSlackBot000001",
+          "name": "Slack bot"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Workflow failed": {
+      "main": [
+        [
+          {
+            "node": "Alert in Slack",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "tags": []
+}

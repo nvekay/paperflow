@@ -10,13 +10,15 @@
   },
   "scripts": {
     "build": "pnpm -r build",
-    "dev:n8n": "docker compose up -d --wait",
+    "dev:n8n": "pnpm n8n:prepare && docker compose up -d --build --wait",
     "down": "docker compose down",
-    "lint": "eslint .",
+    "lint": "eslint . && pnpm --filter n8n-nodes-paperflow lint",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "n8n:prepare": "pnpm --filter n8n-nodes-paperflow build && node scripts/prepare-n8n.mjs",
+    "n8n:export": "node scripts/export-n8n.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

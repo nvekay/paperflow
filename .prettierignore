@@ -6,3 +6,6 @@ playwright-report
 test-results
 # Written by drizzle-kit
 apps/web/drizzle/meta
+# Exported from n8n as-is (pnpm n8n:export)
+n8n/workflows
+n8n/nodes
