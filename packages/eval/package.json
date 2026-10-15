@@ -1,0 +1,23 @@
+{
+  "name": "@paperflow/eval",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "tsx src/generate.ts",
+    "eval": "node --env-file-if-exists=../../.env --import tsx src/run.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@paperflow/extraction": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "playwright": "1.64.0",
+    "sharp": "0.35.5",
+    "tsx": "^4.23.15",
+    "typescript": "~6.0.2",
+    "vitest": "^5.0.4"
+  }
+}
