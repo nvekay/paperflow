@@ -68,8 +68,11 @@ export function gradeInvoice(label: Label, inv: Invoice, decision: RouteDecision
     check('vendorCountry', normText(e.vendor.country) === normText(inv.vendor.country), e.vendor.country, inv.vendor.country);
     check('vendorTaxId', sameText(e.vendor.taxId, inv.vendor.taxId), e.vendor.taxId, inv.vendor.taxId);
     check('invoiceNumber', normText(e.invoiceNumber) === normText(inv.invoiceNumber), e.invoiceNumber, inv.invoiceNumber);
-    check('issueDate', e.issueDate === inv.issueDate, e.issueDate, inv.issueDate);
-    check('dueDate', e.dueDate === inv.dueDate, e.dueDate, inv.dueDate);
+    // Dates that could be read either way are graded only on whether the model flagged them
+    if (!label.expectUncertain?.includes('issueDate')) {
+      check('issueDate', e.issueDate === inv.issueDate, e.issueDate, inv.issueDate);
+      check('dueDate', e.dueDate === inv.dueDate, e.dueDate, inv.dueDate);
+    }
     check('currency', e.currency === inv.currency, e.currency, inv.currency);
     check(
       'lineItems',

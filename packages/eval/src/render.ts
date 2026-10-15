@@ -25,14 +25,16 @@ const THEMES: Record<Theme, string> = {
 export function renderHtml(c: CaseSpec): string {
   const v = c.vendor;
   const l = v.labels;
+  // Ambiguous cases print every date as MM/DD/YYYY whatever the vendor's own style
+  const date = c.ambiguousDate ? (iso: string) => `${iso.slice(5, 7)}/${iso.slice(8, 10)}/${iso.slice(0, 4)}` : v.date;
   const title = c.docType === 'quote' ? l.quote : c.docType === 'receipt' ? l.receipt : l.invoice;
   const secondDate =
     c.docType === 'quote'
-      ? [l.validUntil, v.date(addDays(c.issueDate, 30))]
+      ? [l.validUntil, date(addDays(c.issueDate, 30))]
       : c.docType === 'receipt'
-        ? [l.paidOn, v.date(c.issueDate)]
+        ? [l.paidOn, date(c.issueDate)]
         : c.dueDate
-          ? [l.due, v.date(c.dueDate)]
+          ? [l.due, date(c.dueDate)]
           : null;
 
   const rows = c.lines
@@ -101,7 +103,7 @@ export function renderHtml(c: CaseSpec): string {
     <h1>${esc(title)}</h1>
     <table class="meta">
       <tr><td class="muted">${esc(l.number)}</td><td><strong>${esc(c.invoiceNumber)}</strong></td></tr>
-      <tr><td class="muted">${esc(l.issued)}</td><td>${esc(v.date(c.issueDate))}</td></tr>
+      <tr><td class="muted">${esc(l.issued)}</td><td>${esc(date(c.issueDate))}</td></tr>
       ${secondDate ? `<tr><td class="muted">${esc(secondDate[0]!)}</td><td>${esc(secondDate[1]!)}</td></tr>` : ''}
     </table>
     ${c.docType === 'receipt' ? '<div class="stamp">PAID</div>' : ''}

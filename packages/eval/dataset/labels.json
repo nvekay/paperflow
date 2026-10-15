@@ -816,33 +816,33 @@
     "expectedRoute": "review"
   },
   {
-    "id": "lumen-ambiguous-date",
-    "title": "US invoice dated 03/04/2026",
+    "id": "maple-ambiguous-date",
+    "title": "Canadian invoice dated 03/04/2026 (either order)",
     "kind": "ambiguous",
-    "file": "lumen-ambiguous-date.pdf",
+    "file": "maple-ambiguous-date.pdf",
     "mimeType": "application/pdf",
     "expected": {
       "isInvoice": true,
       "vendor": {
-        "name": "Lumen Studio LLC",
-        "country": "US",
-        "taxId": "84-2917735"
+        "name": "Maple Freight Inc.",
+        "country": "CA",
+        "taxId": "845 221 093 RT0001"
       },
-      "invoiceNumber": "LUM-2026-848",
+      "invoiceNumber": "MAP-2026-848",
       "issueDate": "2026-03-04",
       "dueDate": "2026-04-03",
-      "currency": "USD",
-      "subtotal": 4100,
+      "currency": "CAD",
+      "subtotal": 2275.5,
       "discount": null,
-      "taxRate": 8.25,
-      "taxAmount": 338.25,
-      "total": 4438.25,
+      "taxRate": 13,
+      "taxAmount": 295.82,
+      "total": 2571.32,
       "suspiciousInstructions": false,
       "lineItemCount": 2,
-      "lineItemsSum": 4100
+      "lineItemsSum": 2275.5
     },
     "expectedRoute": "review",
-    "expectUncertain": ["issueDate"]
+    "expectUncertain": ["currency", "issueDate"]
   },
   {
     "id": "bergmann-high-value",

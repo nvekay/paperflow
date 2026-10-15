@@ -6,8 +6,9 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium, type Browser } from 'playwright';
 import sharp from 'sharp';
+import { sha256 } from '@paperflow/extraction';
 import { CASES, type CaseSpec } from './cases.js';
-import { fileOf, labelOf } from './labels.js';
+import { expectedInvoice, fileOf, labelOf } from './labels.js';
 import { footerTemplate, renderHtml } from './render.js';
 
 const out = join(dirname(fileURLToPath(import.meta.url)), '..', 'dataset');
@@ -101,19 +102,61 @@ async function imagePdf(browser: Browser, jpeg: Buffer) {
   return pdf;
 }
 
+/** Documents offered as one-click samples on the demo page, with previews and their known answers */
+const DEMO_SAMPLES = [
+  'bergmann-clean',
+  'sakura-photo',
+  'bergmann-scan',
+  'northwind-bad-total',
+  'lumen-injection',
+  'maple-clean',
+  'bergmann-high-value',
+  'clement-quote',
+];
+const web = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..', 'apps', 'web');
+const samples: Record<string, unknown>[] = [];
+
 await mkdir(out, { recursive: true });
+await mkdir(join(web, 'public', 'samples'), { recursive: true });
 const browser = await chromium.launch();
 try {
   for (const [i, c] of CASES.entries()) {
     let bytes: Buffer;
-    if (c.format === 'pdf') bytes = Buffer.from(await renderPdf(browser, c));
-    else {
-      const png = await screenshot(browser, c);
-      bytes =
-        c.format === 'scan_pdf' ? Buffer.from(await imagePdf(browser, await toScan(png, 7 + i))) : await toPhoto(png);
+    let look: Buffer; // what the file looks like, for the preview
+    const png = await screenshot(browser, c);
+    if (c.format === 'pdf') {
+      bytes = Buffer.from(await renderPdf(browser, c));
+      look = png;
+    } else if (c.format === 'scan_pdf') {
+      look = await toScan(png, 7 + i);
+      bytes = Buffer.from(await imagePdf(browser, look));
+    } else {
+      bytes = look = await toPhoto(png);
     }
     await writeFile(join(out, fileOf(c)), bytes);
     console.log(`${fileOf(c).padEnd(28)} ${(bytes.length / 1024).toFixed(0).padStart(5)} KB`);
+
+    if (DEMO_SAMPLES.includes(c.id)) {
+      await writeFile(join(web, 'public', 'samples', fileOf(c)), bytes);
+      const preview = `${c.id}.preview.jpg`;
+      await sharp(look)
+        .resize({ width: 560, height: 760, fit: 'cover', position: 'top' })
+        .jpeg({ quality: 80 })
+        .toFile(join(web, 'public', 'samples', preview));
+      const label = labelOf(c);
+      samples.push({
+        id: c.id,
+        title: c.title,
+        kind: c.kind,
+        file: fileOf(c),
+        preview,
+        mimeType: label.mimeType,
+        sha256: sha256(bytes),
+        expectedRoute: label.expectedRoute,
+        // Lets the app answer without a model when no API key is set (local development, tests)
+        invoice: expectedInvoice(c),
+      });
+    }
   }
 } finally {
   await browser.close();
@@ -121,5 +164,8 @@ try {
 
 const labels = CASES.map(labelOf);
 await writeFile(join(out, 'labels.json'), `${JSON.stringify(labels, null, 2)}\n`);
+samples.sort((a, b) => DEMO_SAMPLES.indexOf(a.id as string) - DEMO_SAMPLES.indexOf(b.id as string));
+await writeFile(join(web, 'src', 'samples.json'), `${JSON.stringify(samples, null, 2)}\n`);
 const review = labels.filter((l) => l.expectedRoute === 'review').length;
 console.log(`\n${labels.length} documents, ${labels.length - review} expected auto-approve, ${review} expected review`);
+console.log(`${samples.length} demo samples written to apps/web`);

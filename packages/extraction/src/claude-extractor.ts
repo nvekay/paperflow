@@ -27,8 +27,10 @@ Rules:
   amount: when a line shows only quantity and unit price, multiply them.
 - Amounts are plain numbers in the invoice currency: no currency symbols, thousands separators or signs. Read the
   decimal separator from the document's locale (1.234,56 is 1234.56).
-- Dates are YYYY-MM-DD. When the day and month order is ambiguous (03/04/2026), use the convention of the vendor's
-  country and add the field to uncertainFields.
+- Dates are YYYY-MM-DD. Read numeric dates by the vendor's country: day first in most of Europe, Asia, Latin
+  America and Australia (dots, as in 06.09.2026, are always day first), month first in the United States. Such dates
+  are not uncertain. Only when the country does not settle the order (Canada uses both) and no date on the document
+  has a day above 12, add those dates to uncertainFields.
 - currency is the ISO 4217 code ($ alone is USD unless the vendor is in Canada, Australia, New Zealand or Singapore,
   then add currency to uncertainFields).
 - vendor is the company that issued the invoice and is owed the money, not the customer.

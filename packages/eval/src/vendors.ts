@@ -260,7 +260,7 @@ export const VENDORS: Record<string, Vendor> = {
       taxId: '登録番号',
       page: 'ページ',
     },
-    payment: '三菱UFJ銀行 渋谷支店 普通 1234567 サクラトランスレーション（カ',
+    payment: '三菱UFJ銀行 渋谷支店 普通預金 1234567 口座名義 サクラトランスレーション株式会社',
     date: (iso) => {
       const [y, m, d] = ymd(iso);
       return `${y}年${m}月${d}日`;

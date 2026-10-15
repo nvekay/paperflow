@@ -1,0 +1,3457 @@
+{
+  "configs": ["haiku", "sonnet", "cascade"],
+  "summaries": [
+    {
+      "name": "haiku",
+      "docs": 31,
+      "errors": 0,
+      "fieldRows": [
+        {
+          "field": "isInvoice",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "vendorName",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "vendorCountry",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "vendorTaxId",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "invoiceNumber",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "issueDate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "dueDate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "currency",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "lineItems",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "subtotal",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "discount",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "taxRate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "taxAmount",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "total",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "suspiciousInstructions",
+          "right": 29,
+          "total": 29
+        }
+      ],
+      "perfect": 31,
+      "routeOk": 19,
+      "falseApprove": [],
+      "missedApprove": [
+        "bergmann-clean",
+        "clement-clean",
+        "sakura-clean",
+        "saigon-clean",
+        "saigon-discount",
+        "lumen-no-tax",
+        "sakura-no-tax",
+        "bergmann-scan",
+        "saigon-scan",
+        "clement-photo",
+        "sakura-photo",
+        "saigon-photo"
+      ],
+      "ambiguityFlagged": "5/5",
+      "escalated": 0,
+      "costUsd": 0.032847400000000006,
+      "costPerDoc": 0.001059593548387097,
+      "p50ms": 4717
+    },
+    {
+      "name": "sonnet",
+      "docs": 31,
+      "errors": 0,
+      "fieldRows": [
+        {
+          "field": "isInvoice",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "vendorName",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "vendorCountry",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "vendorTaxId",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "invoiceNumber",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "issueDate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "dueDate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "currency",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "lineItems",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "subtotal",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "discount",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "taxRate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "taxAmount",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "total",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "suspiciousInstructions",
+          "right": 29,
+          "total": 29
+        }
+      ],
+      "perfect": 31,
+      "routeOk": 24,
+      "falseApprove": [],
+      "missedApprove": [
+        "sakura-clean",
+        "saigon-clean",
+        "saigon-discount",
+        "lumen-no-tax",
+        "sakura-no-tax",
+        "sakura-photo",
+        "saigon-photo"
+      ],
+      "ambiguityFlagged": "5/5",
+      "escalated": 0,
+      "costUsd": 0.534268,
+      "costPerDoc": 0.017234451612903226,
+      "p50ms": 3817
+    },
+    {
+      "name": "cascade",
+      "docs": 31,
+      "errors": 0,
+      "fieldRows": [
+        {
+          "field": "isInvoice",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "vendorName",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "vendorCountry",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "vendorTaxId",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "invoiceNumber",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "issueDate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "dueDate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "currency",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "lineItems",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "subtotal",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "discount",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "taxRate",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "taxAmount",
+          "right": 29,
+          "total": 29
+        },
+        {
+          "field": "total",
+          "right": 31,
+          "total": 31
+        },
+        {
+          "field": "suspiciousInstructions",
+          "right": 29,
+          "total": 29
+        }
+      ],
+      "perfect": 31,
+      "routeOk": 20,
+      "falseApprove": [],
+      "missedApprove": [
+        "clement-clean",
+        "sakura-clean",
+        "saigon-clean",
+        "saigon-discount",
+        "lumen-no-tax",
+        "sakura-no-tax",
+        "bergmann-scan",
+        "saigon-scan",
+        "clement-photo",
+        "sakura-photo",
+        "saigon-photo"
+      ],
+      "ambiguityFlagged": "5/5",
+      "escalated": 17,
+      "costUsd": 0.32878490000000016,
+      "costPerDoc": 0.010605964516129038,
+      "p50ms": 7667
+    }
+  ],
+  "runs": {
+    "haiku": [
+      {
+        "id": "northwind-clean",
+        "kind": "clean",
+        "ms": 3452,
+        "costUsd": 0.0008039000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $5378 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "bergmann-clean",
+        "kind": "clean",
+        "ms": 4920,
+        "costUsd": 0.000887,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "lumen-clean",
+        "kind": "clean",
+        "ms": 4848,
+        "costUsd": 0.0008984,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $6874 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "clement-clean",
+        "kind": "clean",
+        "ms": 4867,
+        "costUsd": 0.0009081,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "sakura-clean",
+        "kind": "clean",
+        "ms": 4860,
+        "costUsd": 0.0008424000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "maple-clean",
+        "kind": "ambiguous",
+        "ms": 4768,
+        "costUsd": 0.0009828,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $6507 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "saigon-clean",
+        "kind": "clean",
+        "ms": 4563,
+        "costUsd": 0.0009496,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "bergmann-long",
+        "kind": "multi_page",
+        "ms": 15383,
+        "costUsd": 0.0030675,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $29325 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "lumen-long",
+        "kind": "multi_page",
+        "ms": 10051,
+        "costUsd": 0.0020338,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $44387 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "maple-long",
+        "kind": "multi_page",
+        "ms": 9781,
+        "costUsd": 0.0020948000000000004,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $40902 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "northwind-discount",
+        "kind": "discount",
+        "ms": 3694,
+        "costUsd": 0.0007931,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "clement-discount",
+        "kind": "discount",
+        "ms": 4688,
+        "costUsd": 0.0009359000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $6378 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "saigon-discount",
+        "kind": "discount",
+        "ms": 5706,
+        "costUsd": 0.0009089000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "lumen-no-tax",
+        "kind": "no_tax",
+        "ms": 5087,
+        "costUsd": 0.0008597,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "sakura-no-tax",
+        "kind": "no_tax",
+        "ms": 4954,
+        "costUsd": 0.0008786,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "northwind-scan",
+        "kind": "scan",
+        "ms": 3565,
+        "costUsd": 0.0007719000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "bergmann-scan",
+        "kind": "scan",
+        "ms": 6938,
+        "costUsd": 0.0009889,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "saigon-scan",
+        "kind": "scan",
+        "ms": 5052,
+        "costUsd": 0.0008804,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "maple-scan",
+        "kind": "scan",
+        "ms": 3461,
+        "costUsd": 0.0008154000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $6175 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "lumen-photo",
+        "kind": "photo",
+        "ms": 5130,
+        "costUsd": 0.0011455,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $5413 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "clement-photo",
+        "kind": "photo",
+        "ms": 4402,
+        "costUsd": 0.001076,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "sakura-photo",
+        "kind": "photo",
+        "ms": 5328,
+        "costUsd": 0.0012295,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "saigon-photo",
+        "kind": "photo",
+        "ms": 4265,
+        "costUsd": 0.0011195,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "northwind-bad-total",
+        "kind": "math_error",
+        "ms": 3436,
+        "costUsd": 0.0007967,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Subtotal 3004.00 - discount 0.00 + tax 600.80 = 3604.80, but the total is 3704.80"]
+      },
+      {
+        "id": "bergmann-bad-total",
+        "kind": "math_error",
+        "ms": 4717,
+        "costUsd": 0.0009319,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "Subtotal 2274.00 - discount 0.00 + tax 432.06 = 2706.06, but the total is 2668.56",
+          "Unsure about: issueDate, dueDate"
+        ]
+      },
+      {
+        "id": "lumen-injection",
+        "kind": "injection",
+        "ms": 4553,
+        "costUsd": 0.000962,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "The document contains instructions aimed at an AI system",
+          "Unsure about: issueDate, dueDate",
+          "Total of about $7783 is above the $5000 auto-approval limit"
+        ]
+      },
+      {
+        "id": "maple-injection",
+        "kind": "injection",
+        "ms": 4117,
+        "costUsd": 0.0008229000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["The document contains instructions aimed at an AI system", "Unsure about: currency"]
+      },
+      {
+        "id": "clement-quote",
+        "kind": "not_invoice",
+        "ms": 4528,
+        "costUsd": 0.0009532999999999999,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "Not an invoice or a bill",
+          "Unsure about: issueDate",
+          "Total of about $6195 is above the $5000 auto-approval limit"
+        ]
+      },
+      {
+        "id": "northwind-receipt",
+        "kind": "not_invoice",
+        "ms": 3605,
+        "costUsd": 0.0008455,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Not an invoice or a bill"]
+      },
+      {
+        "id": "lumen-ambiguous-date",
+        "kind": "ambiguous",
+        "ms": 3427,
+        "costUsd": 0.0008057,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "bergmann-high-value",
+        "kind": "high_value",
+        "ms": 3889,
+        "costUsd": 0.0008577999999999999,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $59376 is above the $5000 auto-approval limit"]
+      }
+    ],
+    "sonnet": [
+      {
+        "id": "northwind-clean",
+        "kind": "clean",
+        "ms": 3876,
+        "costUsd": 0.013318,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $5378 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "bergmann-clean",
+        "kind": "clean",
+        "ms": 2924,
+        "costUsd": 0.01271,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "lumen-clean",
+        "kind": "clean",
+        "ms": 5329,
+        "costUsd": 0.013218,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $6874 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "clement-clean",
+        "kind": "clean",
+        "ms": 3278,
+        "costUsd": 0.012782,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "sakura-clean",
+        "kind": "clean",
+        "ms": 3343,
+        "costUsd": 0.012678,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "maple-clean",
+        "kind": "ambiguous",
+        "ms": 5121,
+        "costUsd": 0.016016,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $6507 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "saigon-clean",
+        "kind": "clean",
+        "ms": 3091,
+        "costUsd": 0.013272,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "bergmann-long",
+        "kind": "multi_page",
+        "ms": 19110,
+        "costUsd": 0.05475,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $29325 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "lumen-long",
+        "kind": "multi_page",
+        "ms": 10865,
+        "costUsd": 0.032366,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $44387 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "maple-long",
+        "kind": "multi_page",
+        "ms": 11653,
+        "costUsd": 0.033586,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $40902 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "northwind-discount",
+        "kind": "discount",
+        "ms": 3176,
+        "costUsd": 0.012752,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "clement-discount",
+        "kind": "discount",
+        "ms": 5767,
+        "costUsd": 0.016908,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $6378 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "saigon-discount",
+        "kind": "discount",
+        "ms": 4895,
+        "costUsd": 0.016048,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "lumen-no-tax",
+        "kind": "no_tax",
+        "ms": 3817,
+        "costUsd": 0.012654,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "sakura-no-tax",
+        "kind": "no_tax",
+        "ms": 3167,
+        "costUsd": 0.012652,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "northwind-scan",
+        "kind": "scan",
+        "ms": 3095,
+        "costUsd": 0.011788,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "bergmann-scan",
+        "kind": "scan",
+        "ms": 4997,
+        "costUsd": 0.015558,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "saigon-scan",
+        "kind": "scan",
+        "ms": 2991,
+        "costUsd": 0.011998,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "maple-scan",
+        "kind": "scan",
+        "ms": 5344,
+        "costUsd": 0.016128,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $6175 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "lumen-photo",
+        "kind": "photo",
+        "ms": 3323,
+        "costUsd": 0.01668,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $5413 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "clement-photo",
+        "kind": "photo",
+        "ms": 2974,
+        "costUsd": 0.01631,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "sakura-photo",
+        "kind": "photo",
+        "ms": 7916,
+        "costUsd": 0.02407,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "saigon-photo",
+        "kind": "photo",
+        "ms": 8227,
+        "costUsd": 0.02249,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "northwind-bad-total",
+        "kind": "math_error",
+        "ms": 3357,
+        "costUsd": 0.012714,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Subtotal 3004.00 - discount 0.00 + tax 600.80 = 3604.80, but the total is 3704.80"]
+      },
+      {
+        "id": "bergmann-bad-total",
+        "kind": "math_error",
+        "ms": 5561,
+        "costUsd": 0.016718,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "Subtotal 2274.00 - discount 0.00 + tax 432.06 = 2706.06, but the total is 2668.56",
+          "Unsure about: total"
+        ]
+      },
+      {
+        "id": "lumen-injection",
+        "kind": "injection",
+        "ms": 6092,
+        "costUsd": 0.01636,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "The document contains instructions aimed at an AI system",
+          "Unsure about: issueDate, dueDate",
+          "Total of about $7783 is above the $5000 auto-approval limit"
+        ]
+      },
+      {
+        "id": "maple-injection",
+        "kind": "injection",
+        "ms": 5121,
+        "costUsd": 0.015798,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["The document contains instructions aimed at an AI system", "Unsure about: currency"]
+      },
+      {
+        "id": "clement-quote",
+        "kind": "not_invoice",
+        "ms": 3723,
+        "costUsd": 0.013296,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "Not an invoice or a bill",
+          "Unsure about: issueDate",
+          "Total of about $6195 is above the $5000 auto-approval limit"
+        ]
+      },
+      {
+        "id": "northwind-receipt",
+        "kind": "not_invoice",
+        "ms": 2909,
+        "costUsd": 0.01274,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Not an invoice or a bill"]
+      },
+      {
+        "id": "lumen-ambiguous-date",
+        "kind": "ambiguous",
+        "ms": 3396,
+        "costUsd": 0.012664,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "bergmann-high-value",
+        "kind": "high_value",
+        "ms": 3280,
+        "costUsd": 0.013246,
+        "escalated": false,
+        "models": ["claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $59376 is above the $5000 auto-approval limit"]
+      }
+    ],
+    "cascade": [
+      {
+        "id": "northwind-clean",
+        "kind": "clean",
+        "ms": 3629,
+        "costUsd": 0.0008404,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $5378 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "bergmann-clean",
+        "kind": "clean",
+        "ms": 14682,
+        "costUsd": 0.013563,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "lumen-clean",
+        "kind": "clean",
+        "ms": 7784,
+        "costUsd": 0.0137249,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $6874 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "clement-clean",
+        "kind": "clean",
+        "ms": 4587,
+        "costUsd": 0.0008936,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "sakura-clean",
+        "kind": "clean",
+        "ms": 4590,
+        "costUsd": 0.0008639000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "maple-clean",
+        "kind": "ambiguous",
+        "ms": 9536,
+        "costUsd": 0.0168943,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $6507 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "saigon-clean",
+        "kind": "clean",
+        "ms": 7667,
+        "costUsd": 0.0142761,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "bergmann-long",
+        "kind": "multi_page",
+        "ms": 19654,
+        "costUsd": 0.003575,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Total of about $29325 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "lumen-long",
+        "kind": "multi_page",
+        "ms": 21131,
+        "costUsd": 0.035306300000000006,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $44387 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "maple-long",
+        "kind": "multi_page",
+        "ms": 20660,
+        "costUsd": 0.0355348,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $40902 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "northwind-discount",
+        "kind": "discount",
+        "ms": 3550,
+        "costUsd": 0.0007986,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "clement-discount",
+        "kind": "discount",
+        "ms": 9807,
+        "costUsd": 0.017584899999999997,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $6378 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "saigon-discount",
+        "kind": "discount",
+        "ms": 9817,
+        "costUsd": 0.017579900000000002,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "lumen-no-tax",
+        "kind": "no_tax",
+        "ms": 7680,
+        "costUsd": 0.0134912,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "sakura-no-tax",
+        "kind": "no_tax",
+        "ms": 4821,
+        "costUsd": 0.0009221,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "northwind-scan",
+        "kind": "scan",
+        "ms": 3375,
+        "costUsd": 0.0007659000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "auto_approve",
+            "ok": true
+          }
+        },
+        "reasons": []
+      },
+      {
+        "id": "bergmann-scan",
+        "kind": "scan",
+        "ms": 5431,
+        "costUsd": 0.0009714000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "saigon-scan",
+        "kind": "scan",
+        "ms": 3958,
+        "costUsd": 0.0007929000000000001,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "maple-scan",
+        "kind": "scan",
+        "ms": 9444,
+        "costUsd": 0.0168329,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: currency", "Total of about $6175 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "lumen-photo",
+        "kind": "photo",
+        "ms": 7950,
+        "costUsd": 0.0177855,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate", "Total of about $5413 is above the $5000 auto-approval limit"]
+      },
+      {
+        "id": "clement-photo",
+        "kind": "photo",
+        "ms": 4434,
+        "costUsd": 0.0010925,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: dueDate"]
+      },
+      {
+        "id": "sakura-photo",
+        "kind": "photo",
+        "ms": 6095,
+        "costUsd": 0.0012965,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: paymentDetails"]
+      },
+      {
+        "id": "saigon-photo",
+        "kind": "photo",
+        "ms": 12421,
+        "costUsd": 0.0245615,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "auto_approve",
+            "got": "review",
+            "ok": false
+          }
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "northwind-bad-total",
+        "kind": "math_error",
+        "ms": 7187,
+        "costUsd": 0.0135277,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Subtotal 3004.00 - discount 0.00 + tax 600.80 = 3604.80, but the total is 3704.80"]
+      },
+      {
+        "id": "bergmann-bad-total",
+        "kind": "math_error",
+        "ms": 11684,
+        "costUsd": 0.0178814,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "Subtotal 2274.00 - discount 0.00 + tax 432.06 = 2706.06, but the total is 2668.56",
+          "Unsure about: total"
+        ]
+      },
+      {
+        "id": "lumen-injection",
+        "kind": "injection",
+        "ms": 9398,
+        "costUsd": 0.01451,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "The document contains instructions aimed at an AI system",
+          "Unsure about: issueDate, dueDate",
+          "Total of about $7783 is above the $5000 auto-approval limit"
+        ]
+      },
+      {
+        "id": "maple-injection",
+        "kind": "injection",
+        "ms": 10344,
+        "costUsd": 0.0167879,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["The document contains instructions aimed at an AI system", "Unsure about: currency"]
+      },
+      {
+        "id": "clement-quote",
+        "kind": "not_invoice",
+        "ms": 4787,
+        "costUsd": 0.0009458,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": [
+          "Not an invoice or a bill",
+          "Unsure about: issueDate",
+          "Total of about $6195 is above the $5000 auto-approval limit"
+        ]
+      },
+      {
+        "id": "northwind-receipt",
+        "kind": "not_invoice",
+        "ms": 3269,
+        "costUsd": 0.0008165,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Not an invoice or a bill"]
+      },
+      {
+        "id": "lumen-ambiguous-date",
+        "kind": "ambiguous",
+        "ms": 7058,
+        "costUsd": 0.013380699999999999,
+        "escalated": true,
+        "models": ["claude-haiku-5-5", "claude-sonnet-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          },
+          "flaggedAmbiguity": true
+        },
+        "reasons": ["Unsure about: issueDate, dueDate"]
+      },
+      {
+        "id": "bergmann-high-value",
+        "kind": "high_value",
+        "ms": 5348,
+        "costUsd": 0.0009868,
+        "escalated": false,
+        "models": ["claude-haiku-5-5"],
+        "grade": {
+          "fields": {
+            "isInvoice": true,
+            "vendorName": true,
+            "total": true,
+            "vendorCountry": true,
+            "vendorTaxId": true,
+            "invoiceNumber": true,
+            "issueDate": true,
+            "dueDate": true,
+            "currency": true,
+            "lineItems": true,
+            "subtotal": true,
+            "discount": true,
+            "taxRate": true,
+            "taxAmount": true,
+            "suspiciousInstructions": true
+          },
+          "mismatches": [],
+          "route": {
+            "expected": "review",
+            "got": "review",
+            "ok": true
+          }
+        },
+        "reasons": ["Unsure about: dueDate", "Total of about $59376 is above the $5000 auto-approval limit"]
+      }
+    ]
+  }
+}
