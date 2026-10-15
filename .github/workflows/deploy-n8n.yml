@@ -1,0 +1,48 @@
+name: Deploy n8n
+
+# Pushes the n8n image (n8n/ plus the built Paperflow node) to the Hugging Face Space, which rebuilds and restarts it.
+# Needs the HF_SPACE variable (user/space) and the HF_TOKEN secret (a write token).
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'n8n/**'
+      - 'packages/n8n-nodes-paperflow/**'
+      - 'scripts/prepare-n8n.mjs'
+      - '.github/workflows/deploy-n8n.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-n8n
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Push to the Space
+    if: vars.HF_SPACE != ''
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm n8n:prepare
+      - name: Commit the folder to the Space repository
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE: ${{ vars.HF_SPACE }}
+        run: |
+          git clone --depth 1 "https://hf:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" space
+          rsync -a --delete --exclude .git n8n/ space/
+          cd space
+          git add -A
+          if git diff --cached --quiet; then
+            echo "The Space is up to date"
+            exit 0
+          fi
+          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" \
+            commit -m "Deploy ${GITHUB_SHA::7}"
+          git push
