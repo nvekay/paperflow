@@ -4,3 +4,5 @@ dist
 next-env.d.ts
 playwright-report
 test-results
+# Written by drizzle-kit
+apps/web/drizzle/meta
