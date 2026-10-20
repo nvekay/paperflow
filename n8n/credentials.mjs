@@ -1,4 +1,4 @@
-// Prints the n8n credentials the workflows use, built from environment variables (secrets on Hugging Face, .env
+// Prints the n8n credentials the workflows use, built from environment variables (Render settings, .env
 // locally). `n8n import:credentials` encrypts them with N8N_ENCRYPTION_KEY; the IDs match the workflow JSON.
 const env = process.env;
 
@@ -38,7 +38,7 @@ if (env.GOOGLE_SA_EMAIL && env.GOOGLE_SA_PRIVATE_KEY) {
     type: 'googleApi',
     data: {
       email: env.GOOGLE_SA_EMAIL,
-      // Stored on one line in .env and in Space secrets
+      // Stored on one line in .env and in Render settings
       privateKey: env.GOOGLE_SA_PRIVATE_KEY.replace(/\\n/g, '\n'),
       inpersonate: false,
       httpNode: false,

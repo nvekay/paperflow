@@ -1,21 +1,18 @@
-name: Keep the demo awake
+name: Keep n8n awake
 
-# A free Hugging Face Space sleeps after two days without traffic, and a sleeping n8n would make the first visitor's
-# invoice time out. One request a day keeps it running. Needs the N8N_URL and WEB_URL variables.
+# A free Render instance sleeps after 15 minutes without traffic, and a sleeping n8n makes the next visitor's invoice
+# wait for it to start. A request every 10 minutes keeps it running (GitHub may run scheduled jobs a few minutes
+# late). Needs the N8N_URL variable.
 on:
   schedule:
-    - cron: '17 6 * * *'
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
   ping:
-    name: Ping n8n and the app
+    name: Ping n8n
     if: vars.N8N_URL != ''
     runs-on: ubuntu-latest
     steps:
-      - name: n8n health
-        # A sleeping Space takes a minute or two to start
-        run: curl --fail --silent --show-error --retry 10 --retry-delay 20 --retry-all-errors "${{ vars.N8N_URL }}/healthz"
-      - name: Web app
-        if: vars.WEB_URL != ''
-        run: curl --fail --silent --show-error --output /dev/null "${{ vars.WEB_URL }}"
+      # A sleeping instance takes up to a minute to start
+      - run: curl --fail --silent --show-error --max-time 90 --retry 3 --retry-delay 10 "${{ vars.N8N_URL }}/healthz"

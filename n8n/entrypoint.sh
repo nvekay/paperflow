@@ -1,6 +1,6 @@
 #!/bin/sh
 # Imports the credentials and workflows kept in git, then starts n8n. All state lives in Postgres, so a fresh
-# container (a restarted Hugging Face Space has no disk) comes back with the same setup.
+# container (a redeployed Render service has no disk) comes back with the same setup.
 set -eu
 
 node /opt/paperflow/credentials.mjs > /tmp/credentials.json

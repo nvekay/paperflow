@@ -1,5 +1,5 @@
 # Local n8n with its own Postgres database, plus the app database, for development and end-to-end tests.
-# Production runs the same n8n image on Hugging Face Spaces with Neon instead of this Postgres.
+# Production runs the same n8n image on Render with Neon instead of this Postgres.
 services:
   postgres:
     image: postgres:17-alpine
@@ -27,7 +27,7 @@ services:
       postgres:
         condition: service_healthy
     ports:
-      - '5678:7860'
+      - '5678:5678'
     environment:
       DB_POSTGRESDB_HOST: postgres
       DB_POSTGRESDB_DATABASE: n8n
@@ -38,7 +38,7 @@ services:
       N8N_WEBHOOK_URL: http://localhost:5678/
       # The web app runs on the host, outside this network
       PAPERFLOW_API_URL: http://host.docker.internal:3000
-      # The rest comes from .env, like on Hugging Face where these are Space secrets
+      # The rest comes from .env, like on Render where these are environment variables
       PAPERFLOW_API_KEY: ${PAPERFLOW_API_KEY}
       N8N_WEBHOOK_SECRET: ${N8N_WEBHOOK_SECRET}
       SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN:-}
@@ -49,7 +49,7 @@ services:
     extra_hosts:
       - 'host.docker.internal:host-gateway'
     healthcheck:
-      test: ['CMD-SHELL', 'wget -qO- http://localhost:7860/healthz || exit 1']
+      test: ['CMD-SHELL', 'wget -qO- http://localhost:5678/healthz || exit 1']
       interval: 3s
       timeout: 3s
       retries: 60

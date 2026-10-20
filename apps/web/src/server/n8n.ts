@@ -12,8 +12,8 @@ export async function startIntake(documentId: string) {
       method: 'POST',
       headers: { 'content-type': 'application/json', 'x-paperflow-secret': e.N8N_WEBHOOK_SECRET },
       body: JSON.stringify({ documentId }),
-      // A sleeping Hugging Face Space takes a while to wake up
-      signal: AbortSignal.timeout(30_000),
+      // A free Render instance that fell asleep takes up to a minute to wake
+      signal: AbortSignal.timeout(75_000),
     });
   } catch (err) {
     throw new WorkflowUnavailableError(`n8n did not respond: ${String(err)}`);

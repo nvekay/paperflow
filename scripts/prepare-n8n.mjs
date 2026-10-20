@@ -1,4 +1,4 @@
-// Copies the built Paperflow node into n8n/nodes, where the n8n image (local and on Hugging Face) picks it up.
+// Copies the built Paperflow node into n8n/nodes, where the n8n image (local and on Render) picks it up.
 //   pnpm n8n:prepare
 import { cpSync, rmSync } from 'node:fs';
 

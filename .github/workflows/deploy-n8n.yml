@@ -1,7 +1,7 @@
 name: Deploy n8n
 
-# Pushes the n8n image (n8n/ plus the built Paperflow node) to the Hugging Face Space, which rebuilds and restarts it.
-# Needs the HF_SPACE variable (user/space) and the HF_TOKEN secret (a write token).
+# Builds the n8n image (n8n/ plus the built Paperflow node), pushes it to GitHub Container Registry and asks Render
+# to deploy it. The Render step needs the RENDER_DEPLOY_HOOK_URL secret (the service's deploy hook).
 on:
   push:
     branches: [main]
@@ -16,10 +16,16 @@ concurrency:
   group: deploy-n8n
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  packages: write
+
+env:
+  IMAGE: ghcr.io/${{ github.repository_owner }}/paperflow-n8n
+
 jobs:
   deploy:
-    name: Push to the Space
-    if: vars.HF_SPACE != ''
+    name: Build, push and deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -30,19 +36,24 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm n8n:prepare
-      - name: Commit the folder to the Space repository
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: n8n
+          push: true
+          tags: |
+            ${{ env.IMAGE }}:latest
+            ${{ env.IMAGE }}:${{ github.sha }}
+      - name: Deploy on Render
         env:
-          HF_TOKEN: ${{ secrets.HF_TOKEN }}
-          HF_SPACE: ${{ vars.HF_SPACE }}
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
         run: |
-          git clone --depth 1 "https://hf:${HF_TOKEN}@huggingface.co/spaces/${HF_SPACE}" space
-          rsync -a --delete --exclude .git n8n/ space/
-          cd space
-          git add -A
-          if git diff --cached --quiet; then
-            echo "The Space is up to date"
+          if [ -z "$HOOK" ]; then
+            echo "RENDER_DEPLOY_HOOK_URL is not set; the image is pushed, deploy it from Render"
             exit 0
           fi
-          git -c user.name="github-actions" -c user.email="github-actions@users.noreply.github.com" \
-            commit -m "Deploy ${GITHUB_SHA::7}"
-          git push
+          curl --fail --silent --show-error --output /dev/null -X POST "$HOOK"
