@@ -21,6 +21,8 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # The app and the eval import the core package from its dist
+      - run: pnpm --filter @paperflow/extraction build
       - run: pnpm format:check
       - run: pnpm typecheck
       - run: pnpm lint
