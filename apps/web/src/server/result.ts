@@ -1,7 +1,7 @@
 import { failed, type CheckResult, type Invoice, type RouteDecision } from '@paperflow/extraction';
 import type { DocumentMeta } from './documents';
 
-/** One flat row per invoice, as the workflow appends it to Google Sheets (column names are the keys) */
+/** One flat row per invoice, as the workflow appends it to Google Sheets (keys are column names; no dots, n8n reads those as paths) */
 export interface SheetRow {
   'Document ID': string;
   Received: string;
@@ -17,7 +17,7 @@ export interface SheetRow {
   'Tax rate %': number | string;
   Tax: number | string;
   Total: number | string;
-  'Total USD (approx.)': number | string;
+  'Total USD': number | string;
   Lines: number;
   'Approved by': string;
 }
@@ -54,7 +54,7 @@ export function sheetRow(doc: DocumentMeta, inv: Invoice, decision: RouteDecisio
     'Tax rate %': cell(inv.taxRate),
     Tax: cell(inv.taxAmount),
     Total: cell(inv.total),
-    'Total USD (approx.)': cell(decision.totalUsd),
+    'Total USD': cell(decision.totalUsd),
     Lines: inv.lineItems.length,
     'Approved by': approvedBy,
   };

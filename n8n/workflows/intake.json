@@ -405,7 +405,9 @@
       "parameters": {
         "mode": "raw",
         "jsonOutput": "={{ $json.body ? $json.body.row : $json.row }}",
-        "options": {}
+        "options": {
+          "dotNotation": false
+        }
       },
       "id": "29659d21-e580-462b-a4ed-431063fe06c5",
       "name": "Sheet row",
