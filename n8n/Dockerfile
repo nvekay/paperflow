@@ -1,7 +1,8 @@
 # n8n with the Paperflow node and the workflows from git. The same image runs locally (docker compose) and on Render,
 # which pulls it from GitHub Container Registry. Run `pnpm n8n:prepare` before building: it copies the built node
 # into ./nodes.
-FROM docker.n8n.io/n8nio/n8n:2.43.5
+# The Docker Hub copy of the official image (same digest); docker.n8n.io rate-limits GitHub runners
+FROM n8nio/n8n:2.43.5
 
 COPY --chown=node:node nodes /opt/paperflow/nodes
 COPY --chown=node:node workflows /opt/paperflow/workflows
